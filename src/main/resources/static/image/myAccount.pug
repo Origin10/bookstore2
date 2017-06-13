@@ -1,0 +1,18 @@
+//output:../myAccount.html, doctype:strict
+
+html(lang="en" xmlns:th="http://www.w3.org/1000/xhtml")
+  head(th:replace="common/header :: common-header")
+  body
+    div(th:replace="common/header :: navbar")
+      
+    .container
+      .raw
+        .col-xs-8
+          h2.section-headline
+            span User Account
+        .col-xs-4
+          img.img-responsive(src="/images/logo.png")
+      hr
+      img.img-responsive(src="/images/wood.png")
+              
+    div(th:replace="common/header :: body-bottom-scripts")

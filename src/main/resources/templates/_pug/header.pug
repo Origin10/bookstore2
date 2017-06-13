@@ -1,0 +1,52 @@
+//output:../common/header.html, doctype:strict
+
+html(lang="en" xmlns:th="http://www.w3.org/1999/xhtml")
+  head(th:fragment="common-header")
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-compatible', content='IE=edge')
+    meta(name='viewport', content='with=device-with, initial-scale=1')
+    title BOOKSTORE
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/css/non-responsive.css')
+    
+    link(rel='stylesheet', href='/css/style.min.css')
+    link(rel='icon', href='/image/apple-touch-icon.png')
+      
+  body
+    div(th:fragment="navbar")
+      .page-top(style='width: 100%; height: 20px; background-color: #f46b42;')
+      nav.navbar.navbar-default.navbar-inverse
+        .container-fluid
+        .navbar-header
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') LE'S BOOKSTORE
+        // Collect the nav links, forms, and other content for toggling
+        #navbar
+          ul.nav.navbar-nav.navbar-left
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') BOOKS 
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Browse the bookshelf
+                li
+                  a(href='#') Store hours &#38; Directions
+                li
+                  a(href='#') FAQ
+            form.navbar-form
+              .form-group
+                input.form-control(type="text" name="keyword" placeholder="Book title")
+                button.btn.btn-default(type="submit") Search
+          ul.nav.navbar-nav.navbar-right
+            li 
+              a(href='#') SHOPPING CART
+            li 
+              a(href='#') MY ACCOUNT
+            li 
+              a(href='#') LOGOUT
+    div(th:fragment="body-bottom-scripts")
+      script(src='/js/jquery.min.js')
+      script(src='/js/bootstrap.min.js')

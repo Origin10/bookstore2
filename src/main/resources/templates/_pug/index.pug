@@ -1,0 +1,153 @@
+//output:../index.html, doctype:strict
+
+html(lang="en" xmlns:th="http://www.w3.org/1000/xhtml")
+  head(th:replace="common/header :: common-header")
+  body
+    div(th:replace="common/header :: navbar")
+      
+    .container
+      .row
+        // carousel panel
+        .panel.panel-default
+          // carousel
+          .col-xs-8
+            .panel-heading
+            .panel-body
+              #carousel-example-generic.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                  li(data-target='#carousel-example-generic', data-slide-to='1')
+                  li(data-target='#carousel-example-generic', data-slide-to='2')
+                // Wrapper for Main slides
+                .carousel-inner(role='listbox')
+                  .item.active
+                    img(src='https://unsplash.it/1600/500/?random', alt='...')/
+                    .carousel-caption
+                      h4 First Thumbnail Label
+                      p
+                        | Contrary to popular belief, Lorem Ipsum is not simply
+                        | random text. It has roots in a piece of classical Latin
+                        | literature from 45 BC, making it over 2000 years old.
+                  .item
+                    img(src='https://unsplash.it/1600/501/?random', alt='...')/
+                    .carousel-caption
+                      h4 First Thumbnail Label
+                      p
+                        | Contrary to popular belief, Lorem Ipsum is not simply
+                        | random text. It has roots in a piece of classical Latin
+                        | literature from 45 BC, making it over 2000 years old.
+                  .item
+                    img(src='https://unsplash.it/1600/502/?random', alt='...')/
+                    .carousel-caption
+                      h4 First Thumbnail Label
+                      p
+                        | Contrary to popular belief, Lorem Ipsum is not simply
+                        | random text. It has roots in a piece of classical Latin
+                        | literature from 45 BC, making it over 2000 years old.
+                  |                             ...
+                // Controls
+                a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+                  span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                  span.sr-only Previous
+                a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+                  span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                  span.sr-only Next
+          .col-xs-4
+            img.img-responsive(src='/image/logo.png')/
+        // end of carousel panel
+      hr
+      // 3 col-xs-4 img
+      .raw
+        .col-xs-4
+          .panel.panel-default
+            .panel-body
+              img.img-responsive(src='/image/bestseller.png')/
+        .col-xs-4
+          .panel.panel-default
+            .panel-body
+              img.img-responsive(src='/image/hours.png')/
+        .col-xs-4
+          .panel.panel-default
+            .panel-body
+              img.img-responsive(src='/image/faq.png')/
+      
+      .home-headline
+        span Featured Book
+      hr(style='margin-top: -15px;')
+      .row
+        #featured-books.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#featured-books', data-slide-to='0')
+            li(data-target='#featured-books', data-slide-to='1')
+            li(data-target='#featured-books', data-slide-to='2')
+          // Wrapper for 6 pictures slides
+          .carousel-inner(role='listbox')
+            // data-slide-to="0"
+            .item.active
+              img(src='/image/shelf.png')/
+              .carousel-caption
+                .row
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+            // data-slide-to="1"
+            .item
+              img(src='/image/shelf.png')
+              .carousel-caption
+                .row
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+            // data-slide-to="2"
+            .item
+              img(src='/image/shelf.png')
+              .carousel-caption
+                .row
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+                  .col-xs-2
+                    img.img-responsive(src='/image/book1.png')/
+            // Controls
+            a.left.carousel-control(href='##featured-books', role='button', data-slide='prev')
+              span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+              span.sr-only Previous
+            a.right.carousel-control(href='##featured-books', role='button', data-slide='next')
+              span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+              span.sr-only Next
+      
+
+      //
+        Bootstrap core JavaScript
+        ==================================================
+      // Placed at the end of the document so the pages load faster
+      
+    div(th:replace="common/header :: body-bottom-scripts")
+    
