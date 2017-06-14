@@ -1,19 +1,79 @@
 //output:../myAccount.html, doctype:strict
 
-html(lang="en" xmlns:th="http://www.w3.org/1000/xhtml")
-  head(th:replace="common/header :: common-header")
+html(lang='en', xmlns:th='http://www.w3.org/1000/xhtml')
+  head(th:replace='common/header :: common-header')
   body
-    div(th:replace="common/header :: navbar")
-      
+    div(th:replace='common/header :: navbar')
+
     .container
-      .raw(style="margin-bottom: -100px;")
-        .col-xs-8
-          h2.section-headline
-            span User Account
-        .col-xs-4
-          img.img-responsive(src="/image/logo.png")
-      //hr none-display
-      hr(style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;")
-      img.img-responsive(src="/image/wood.png")
-              
-    div(th:replace="common/header :: body-bottom-scripts")
+        .row(style='margin-bottom: -100px;')
+          .col-xs-8
+            h2.section-headline
+              span User Account
+          .col-xs-4
+            img.img-responsive(src='/image/logo.png')
+        hr(style='position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;')
+        img.img-responsive(src='/image/wood.png', style='margin-top: -75px;')
+        .row(style='margin-top: 60px;')
+          .col-xs-9.col-xs-offset-3
+            // Nav tabs
+            ul.nav.nav-tabs
+              li
+                a(href='#tab-1', data-toggle='tab')
+                  span(style='color: red;') Create new account
+              li
+                a(href='#tab-2', data-toggle='tab')
+                  span(style='color: red;') Log in
+              li
+                a(href='#tab-3', data-toggle='tab')
+                  span(style='color: red;') Forget Password
+            // Tab panels
+            .tab-content
+              // create new user pane
+              #tab-1.tab-pane.fade
+                .panel-group
+                  .panel.panel-default(style='border: none;')
+                    .panel-body(style='background-color: #ededed; margin-top: 20px;')
+                      form
+                        .form-group
+                          label(for='newUsername') * Username:
+                          input#newUsername.form-control(required='required', type='text', name='username')
+                          p(style='color: #828282') Enter your username here.
+                        .form-group
+                          label(for='email') * Email Address:
+                          input#email.form-control(required='required', type='text', name='email')
+                          p(style='color: #828282')
+                            | A valid email address. All
+                            | emails from the system withll be sent to this address. The
+                            | email address is not made public and will only be used if
+                            | you wish to receive a new password or wish to receive
+                            | certain notification.
+                        button.btn.btn-primary(type='submit') Create new account
+              // log in
+              #tab-2.tab-pane.fade
+                .panel-group
+                  .panel.panel-default(style='border: none;')
+                    .panel-body(style='background-color: #ededed; margin-top: 20px;')
+                      form
+                        .form-group
+                          label(for='newUsername') * Username:
+                          input#newUsername.form-control(required='required', type='text', name='username')
+                          p(style='color: #828282') Enter your username here.
+                        .form-group
+                          label(for='password') * Password:
+                          input#password.form-control(required='required', type='password', name='password')
+                          p(style='color: #828282') Enter the password that accompanies your username
+                        button.btn.btn-primary(type='submit') Log in
+              // forget password
+              #tab-3.tab-pane.fade
+                .panel-group
+                  .panel.panel-default(style='border: none;')
+                    .panel-body(style='background-color: #ededed; margin-top: 20px;')
+                      form
+                        .form-group
+                          label(for='recoverEmail') * Your Email:
+                          input#recoverEmail.form-control(required='required', type='text', name='email')
+                          p(style='color: #828282') Enter your registered email address here.
+                        button.btn.btn-primary(type='submit') Submit
+    // end of container
+    div(th:replace='common/header :: body-bottom-scripts')
